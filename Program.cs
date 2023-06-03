@@ -69,35 +69,80 @@ void ShowArray (int [] arr)
     Console.WriteLine();
 }
 
-//Tast1____________________________________
-int length = GetCheckedNumber ("Введите количество элементов массива", "1234567890");
-int [] arr1 = new int [length];
-int evenFiguresCounter = 0;
-for (int i = 0; i < length; i++)
+void ShowDoubleArray (double [] array)
 {
-    arr1 [i] = new Random().Next(100, 1000);
-    if (arr1 [i] % 2 == 0)
+    Console.Write("Наш массив: [");
+    if (array.Length == 0)
     {
-        evenFiguresCounter++;
+        Console.WriteLine ("Пустой массив, сэр]");
     }
-}
-ShowArray(arr1);
-Console.WriteLine($"Количество четных чисел: {evenFiguresCounter}");
-// ________________________________________
-//Task2____________________________________
-int length2 = GetCheckedNumber ("Введите количество элементов массива", "1234567890");
-int [] arr2 = new int [length2];
-int  sumValueOfOddIndex= 0;
-for (int i = 0; i < length2; i++)
-{
-    arr2 [i] = new Random().Next(-99, 100);
-    if (i % 2 != 0)
+    else
     {
-        sumValueOfOddIndex += arr2 [i];
+        for (int w = 0; w < array.Length; w++)
+        {
+            if (w != array.Length - 1)
+            {
+                Console.Write(array [w] + ", ");
+            }
+            else
+            {
+                Console.Write(array [w] + "]");
+            }
+        }
     }
+    Console.WriteLine();
 }
-ShowArray(arr2);
-Console.WriteLine($"Сумма элементов на нечетных позициях: {sumValueOfOddIndex}");
+
+// //Tast1____________________________________
+// int length = GetCheckedNumber ("Введите количество элементов массива", "1234567890");
+// int [] arr1 = new int [length];
+// int evenFiguresCounter = 0;
+// for (int i = 0; i < length; i++)
+// {
+//     arr1 [i] = new Random().Next(100, 1000);
+//     if (arr1 [i] % 2 == 0)
+//     {
+//         evenFiguresCounter++;
+//     }
+// }
+// ShowArray(arr1);
+// Console.WriteLine($"Количество четных чисел: {evenFiguresCounter}");
+// // ________________________________________
+// //Task2____________________________________
+// int length2 = GetCheckedNumber ("Введите количество элементов массива", "1234567890");
+// int [] arr2 = new int [length2];
+// int  sumValueOfOddIndex= 0;
+// for (int i = 0; i < length2; i++)
+// {
+//     arr2 [i] = new Random().Next(-99, 100);
+//     if (i % 2 != 0)
+//     {
+//         sumValueOfOddIndex += arr2 [i];
+//     }
+// }
+// ShowArray(arr2);
+// Console.WriteLine($"Сумма элементов на нечетных позициях: {sumValueOfOddIndex}");
 //Task3____________________________________
-
-
+int length3 = GetCheckedNumber("Укажите количество переменных", "1234567890");
+double [] arr3 = new double [length3];
+for (int i = 0; i < length3; i++)
+{
+    arr3 [i] = new Random().Next(-10000, 10000) / 100.0;
+}
+ShowDoubleArray(arr3);
+double max = arr3 [0];
+double min = arr3 [0];
+for (int i = 0; i < arr3.Length; i++)
+{
+    if (max < arr3 [i])
+    {
+        max = arr3 [i];
+    }
+    if (min > arr3 [i])
+    {
+        min = arr3 [i];
+    }
+}
+double deduction = max - min;
+deduction = Math.Round(deduction, 3, MidpointRounding.ToZero);
+Console.WriteLine($"Максимальный элемент: {max}; Минимальный элемент: {min};\nИх разница: {deduction}");
