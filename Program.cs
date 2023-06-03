@@ -19,16 +19,16 @@ bool TestForNullOrEmpty(string s)
     return result;
 }
 
-bool isThereText (string typedNumber, string allowedCharacters)
+bool isThereText (string typedNumber, string okChars)
 {
     char characterToBeChecked = ' ';
     int checkedChars = 0;
     for (int i = 0; i < typedNumber.Length; i++)
     {
         characterToBeChecked = typedNumber [i];
-        for (int j = 0; j < allowedCharacters.Length; j++)
+        for (int j = 0; j < okChars.Length; j++)
         {
-            if (characterToBeChecked == allowedCharacters [j])
+            if (characterToBeChecked == okChars [j])
             {
                 checkedChars++;
                 break;
