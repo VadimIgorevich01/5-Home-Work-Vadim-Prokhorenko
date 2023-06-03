@@ -93,35 +93,35 @@ void ShowDoubleArray (double [] array)
     Console.WriteLine();
 }
 
-// //Tast1____________________________________
-// int length = GetCheckedNumber ("Введите количество элементов массива", "1234567890");
-// int [] arr1 = new int [length];
-// int evenFiguresCounter = 0;
-// for (int i = 0; i < length; i++)
-// {
-//     arr1 [i] = new Random().Next(100, 1000);
-//     if (arr1 [i] % 2 == 0)
-//     {
-//         evenFiguresCounter++;
-//     }
-// }
-// ShowArray(arr1);
-// Console.WriteLine($"Количество четных чисел: {evenFiguresCounter}");
-// // ________________________________________
-// //Task2____________________________________
-// int length2 = GetCheckedNumber ("Введите количество элементов массива", "1234567890");
-// int [] arr2 = new int [length2];
-// int  sumValueOfOddIndex= 0;
-// for (int i = 0; i < length2; i++)
-// {
-//     arr2 [i] = new Random().Next(-99, 100);
-//     if (i % 2 != 0)
-//     {
-//         sumValueOfOddIndex += arr2 [i];
-//     }
-// }
-// ShowArray(arr2);
-// Console.WriteLine($"Сумма элементов на нечетных позициях: {sumValueOfOddIndex}");
+//Task1____________________________________
+int length = GetCheckedNumber ("Введите количество элементов массива", "1234567890");
+int [] arr1 = new int [length];
+int evenFiguresCounter = 0;
+for (int i = 0; i < length; i++)
+{
+    arr1 [i] = new Random().Next(100, 1000);
+    if (arr1 [i] % 2 == 0)
+    {
+        evenFiguresCounter++;
+    }
+}
+ShowArray(arr1);
+Console.WriteLine($"Количество четных чисел: {evenFiguresCounter}");
+// ________________________________________
+//Task2____________________________________
+int length2 = GetCheckedNumber ("Введите количество элементов массива", "1234567890");
+int [] arr2 = new int [length2];
+int  sumValueOfOddIndex= 0;
+for (int i = 0; i < length2; i++)
+{
+    arr2 [i] = new Random().Next(-99, 100);
+    if (i % 2 != 0)
+    {
+        sumValueOfOddIndex += arr2 [i];
+    }
+}
+ShowArray(arr2);
+Console.WriteLine($"Сумма элементов на нечетных позициях: {sumValueOfOddIndex}");
 //Task3____________________________________
 int length3 = GetCheckedNumber("Укажите количество переменных", "1234567890");
 double [] arr3 = new double [length3];
