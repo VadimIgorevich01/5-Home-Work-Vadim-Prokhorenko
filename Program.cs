@@ -1,8 +1,8 @@
-﻿int GetCheckedNumber (string info)
+﻿int GetCheckedNumber (string info, string allowedCharacters)
 {
     Console.WriteLine (info);
     string? numberToBeChecked = Console.ReadLine();
-    while (isThereText(numberToBeChecked!) | TestForNullOrEmpty(numberToBeChecked!))
+    while (isThereText(numberToBeChecked!, allowedCharacters!) | TestForNullOrEmpty(numberToBeChecked!))
     {
         Console.WriteLine ("Условие не выполнено или строка пуста, попробуйте ввести иначе");
         Console.WriteLine (info);
@@ -19,9 +19,8 @@ bool TestForNullOrEmpty(string s)
     return result;
 }
 
-bool isThereText (string typedNumber)
+bool isThereText (string typedNumber, string allowedCharacters)
 {
-    string allowedCharacters = "1234567890";
     char characterToBeChecked = ' ';
     int checkedChars = 0;
     for (int i = 0; i < typedNumber.Length; i++)
@@ -71,7 +70,7 @@ void ShowArray (int [] arr)
 }
 
 //Tast1____________________________________
-int length = GetCheckedNumber ("Введите количество элементов массива");
+int length = GetCheckedNumber ("Введите количество элементов массива", "1234567890");
 int [] arr1 = new int [length];
 int evenFiguresCounter = 0;
 for (int i = 0; i < length; i++)
